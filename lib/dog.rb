@@ -61,7 +61,8 @@ class Dog
       row = dog[0]
       dog = Dog.new(row[0], row[1], row[2])
     else
-      dog = Dog.new()
+      dog = Dog.new(name: name, breed: breed)
+    end
   end
     
   
