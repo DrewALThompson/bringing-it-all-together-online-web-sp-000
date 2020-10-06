@@ -59,7 +59,9 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       row = dog[0]
-      dog = Dog.new(row[0],)
+      dog = Dog.new(row[0], row[1], row[2])
+    else
+      dog = Dog.new()
   end
     
   
