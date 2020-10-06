@@ -71,9 +71,9 @@ class Dog
     DB[:conn].execute(sql, name).map{|row|self.new_from_db(row)}[0]
   end
   
-  def update(name: , breed:)
-    sql = "UPDATE dogs SET name = ?, breed = ?"
-    DB[:conn].execute(sql, name, breed)
+  def update(name: , breed: , id: )
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+    DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
   
 end
